@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import './App.css';
+import Form from './components/Form';
+import Snapshot from './components/Snapshot';
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
-      test
+      <Form />
+      <Snapshot />
     </div>
   );
 }
 
-export default App;
+export default connect(
+
+)(App);
