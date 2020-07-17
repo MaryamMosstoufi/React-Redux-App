@@ -6,7 +6,7 @@ import {
 } from './../actions';
 
 export const initialState = {
-  settings: '',
+  getUrl: 'https://lambdaschool.com',
   apiCall: {
     isLoading: false,
     snapshot: {},
@@ -19,7 +19,7 @@ export const rootReducer = (state = initialState, action) => {
     case NEW_REQUEST:
       return {
         ...state,
-        settings: action.payload
+        getUrl: action.payload
       }
     case API_CALL_START:
       return {

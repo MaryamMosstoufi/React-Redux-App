@@ -9,7 +9,6 @@ export function  newRequest(newUrl) {
     type: NEW_REQUEST,
     payload: newUrl 
   }
-  
 }
 
 export const API_CALL_START = 'API_CALL_START';
@@ -17,15 +16,12 @@ export const API_CALL_SUCCESS = 'API_CALL_SUCCESS';
 export const API_CALL_FAILURE = 'API_CALL_FAILURE';
 
 export const apiCall = (props) => {
-  console.log(props)
   return dispatch => {
     dispatch({ type: API_CALL_START });
     axios
-      //.get('https://api.apiflash.com/v1/urltoimage?access_key='+ ACCESS_KEY + '&url=https://lambdaschool.com/&response_type=json')
-      .get('https://api.apiflash.com/v1/urltoimage?access_key='+ ACCESS_KEY + '&url=' + props + '&response_type=json&ttl=86400')
+      .get('https://api.apiflash.com/v1/urltoimage?access_key='+ ACCESS_KEY + '&url=' + props + '&response_type=json&ttl=864000')
       .then(res => {
         dispatch({ type: API_CALL_SUCCESS, payload: res.data.url });
-        console.log(res)
       })
       .catch(err => {
         dispatch({ type: API_CALL_FAILURE, payload: err.message });

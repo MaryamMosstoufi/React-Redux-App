@@ -6,7 +6,7 @@ import Snapshot from './components/Snapshot';
 
 const App = (props) => {
   return (
-    <div className="App">
+    <div className="uk-section uk-section-small">
       <Form />
       <Snapshot />
     </div>

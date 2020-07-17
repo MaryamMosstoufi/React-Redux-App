@@ -7,23 +7,29 @@ const Form = (props) => {
     e.preventDefault();
     props.newRequest(e.target.value)
   }
-  console.log(props)
+
   return (
-    <form onSubmit={props.apiCall(props.settings)}>
-      <input 
-        type='url'
-        name='newUrl'
-        placeholder='URL *'
-        onChange={handleChange}
-        required
-      /> 
-    </form>
+    <div className='uk-flex uk-flex-center'>
+      <form className='uk-width-medium' onSubmit={props.apiCall(props.getUrl)}>
+        <div className='uk-margin'>
+          <input 
+            className="uk-input"
+            type='url'
+            name='newUrl'
+            placeholder='URL *'
+            onChange={handleChange}
+            required
+          /> 
+        </div>
+        <button className='uk-button uk-button-primary uk-width-1-1'>Capture</button>
+      </form>
+    </div>
   )
 }
 
 const mapStateToProps = state => {
   return {
-    settings: state.settings
+    getUrl: state.getUrl
   };
 };
 

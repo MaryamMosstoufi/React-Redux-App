@@ -5,10 +5,7 @@ import { apiCall } from './../store/actions';
 
 const Snapshot = (props) => {
   return (
-    <div>
-      Snapshot
-      <button onClick={()=>props.apiCall(props.newRequest)}>Capture</button>
-       
+    <div>      
       {props.isLoading &&
         <h4>Loading...</h4>
       }
